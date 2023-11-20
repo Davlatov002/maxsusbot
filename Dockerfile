@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.11.1  as builder
+FROM --platform=linux/amd64 python:3.11.3  as builder
 
 WORKDIR /app
 
