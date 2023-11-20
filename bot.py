@@ -18,7 +18,7 @@ def habar():
             b = generate_bsc_addresses(a)
             for i in b:
                 print(i)
-                time.sleep(5)
+                time.sleep(7)
                 try:
                     s = get_bnb_price(i)
                     if s != None:

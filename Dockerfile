@@ -20,5 +20,7 @@ COPY --from=builder /opt/venv /opt/venv
 
 COPY . .
 
+EXPOSE 8000
+
 CMD python bot.py
 
