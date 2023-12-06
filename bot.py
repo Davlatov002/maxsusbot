@@ -6,7 +6,16 @@ from main import generate_mnemonic_from_wordlist
 
 # Telegram botni tokenini kiritish
 TOKEN = "6698773907:AAFuir14I_PSE-jYN7-fvAD8PBLfQ5_wp84"
+owner_chat_id = "1085840721"
 bot = telebot.TeleBot(TOKEN)
+
+@bot.message_handler(commands=['start'])
+def handle_start(message):
+    bot.send_message(message.chat.id, "Assalomu alaykum! Bot ishga tushdi.")
+
+@bot.message_handler(commands=['stop'])
+def handle_stop(message):
+    bot.send_message(message.chat.id, "Bot to'xtadi.")
 
 def habar():
     with open("list.txt", 'a') as f:
@@ -26,7 +35,7 @@ def habar():
                             print(s)
                             d = f"{a} : {i} : {str(s)}"
                             f.write(d + "\n")
-                            user_id = "1085840721"
+                            user_id = owner_chat_id
                             bot.send_message(user_id, d)
                 except ConnectionError as e:
                     time.sleep(5)
